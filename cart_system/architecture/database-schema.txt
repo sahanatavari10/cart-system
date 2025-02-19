@@ -1,0 +1,44 @@
+Database Schema
+We’ll be using PostgreSQL as the relational database. Here’s the schema for each service:
+
+Database name: ecommerce_db
+
+User Service
+Users Table:
+user_id (Primary Key)
+username
+email
+password (hashed)
+created_at
+
+Product Service
+Products Table:
+product_id (Primary Key)
+name
+description
+price
+stock_quantity
+created_at
+
+Cart Service
+Cart Table:
+cart_id (Primary Key)
+user_id (Foreign Key to Users Table)
+product_id (Foreign Key to Products Table)
+quantity
+added_at
+
+Order Service
+Orders Table:
+order_id (Primary Key)
+user_id (Foreign Key to Users Table)
+total_amount
+status (e.g., "Placed", "Shipped", "Delivered")
+created_at
+
+Order Items Table:
+order_item_id (Primary Key)
+order_id (Foreign Key to Orders Table)
+product_id (Foreign Key to Products Table)
+quantity
+price
