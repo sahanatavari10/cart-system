@@ -1,0 +1,27 @@
+Services
+
+User Service:
+Handles user registration, login, and profile management.
+Stores user data (username, email, password).
+Generates JWT tokens for authentication.
+
+Product Service:
+Manages product CRUD operations (create, read, update, delete).
+Stores product data (name, description, price, stock quantity).
+
+Cart Service:
+Manages cart operations (add/remove/update items).
+Stores cart data (user ID, product ID, quantity).
+Communicates with the Product Service to validate product availability.
+
+Order Service:
+Handles order placement and history.
+Stores order data (user ID, total amount, status).
+Communicates with the Cart Service to clear the cart after placing an order.
+Communication Between Services
+
+Synchronous Communication:
+RESTful APIs for real-time communication (e.g., Cart Service calling Product Service to check stock).
+
+Authentication and Authorization
+Each service will validate the JWT token to ensure the user is authenticated.
