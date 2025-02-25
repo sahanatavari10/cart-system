@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface ProductService {
     List<Product> getAllProducts();
-    Product getProductById(Long productId);
+    ProductGetResult getProductById(Long productId);
     Product addProduct(ProductDTO product);
-    Product updateProduct(Long productId,ProductDTO product);
+    ProductUpdateResult updateProduct(Long productId,ProductDTO product);
     void deleteProduct(Long productId);
 }
